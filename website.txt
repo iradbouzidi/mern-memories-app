@@ -1,0 +1,5 @@
+Back-End:
+https://mern-memories-app-irad.herokuapp.com/
+
+Front-End:
+https://mern-memories-app-irad.netlify.app/
