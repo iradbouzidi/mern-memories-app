@@ -20,7 +20,6 @@ import useStyles from "./styles";
 const Post = ({ post, setCurrentId }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
-
   const user = JSON.parse(localStorage.getItem("profile"));
 
   const Likes = () => {
@@ -61,14 +60,12 @@ const Post = ({ post, setCurrentId }) => {
         }
         title={post.title}
       />
-
       <div className={classes.overlay}>
         <Typography variant="h6">{post.name}</Typography>
         <Typography variant="body2">
           {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
-
       {(user?.result?.googleId === post?.creator ||
         user?.result?._id === post?.creator) && (
         <div className={classes.overlay2}>
@@ -81,13 +78,11 @@ const Post = ({ post, setCurrentId }) => {
           </Button>
         </div>
       )}
-
       <div className={classes.details}>
         <Typography variant="body2" color="textSecondary" component="h2">
           {post.tags.map((tag) => `#${tag} `)}
         </Typography>
       </div>
-
       <Typography
         className={classes.title}
         gutterBottom
@@ -96,13 +91,11 @@ const Post = ({ post, setCurrentId }) => {
       >
         {post.title}
       </Typography>
-
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {post.message}
         </Typography>
       </CardContent>
-
       <CardActions className={classes.cardActions}>
         <Button
           size="small"
@@ -112,7 +105,6 @@ const Post = ({ post, setCurrentId }) => {
         >
           <Likes />
         </Button>
-
         {(user?.result?.googleId === post?.creator ||
           user?.result?._id === post?.creator) && (
           <Button
