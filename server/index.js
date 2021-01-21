@@ -19,7 +19,7 @@ app.use(cors());
 app.use("/posts", postRoutes);
 app.use("/user", userRouter);
 
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Memories API");
 });
 
