@@ -24,15 +24,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    //const token = user?.token;
-    const token = user?.result?.token;
+    const token = user?.token;
 
     if (token) {
-      const decodedToken = decode(token, { header: true });
+      const decodedToken = decode(token);
 
-      if (decodedToken.exp * 1000 < new Date().getTime()) {
-        logout();
-      }
+      if (decodedToken.exp * 1000 < new Date().getTime()) logout();
     }
 
     setUser(JSON.parse(localStorage.getItem("profile")));
