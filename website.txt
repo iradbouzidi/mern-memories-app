@@ -1,0 +1,13 @@
+Back-End:
+https://mern-memories-app-irad.herokuapp.com/
+
+Front-End:
+https://mern-memories-app-irad.netlify.app/
+
+Nelify Settings:
+- Base directory: front-end
+- Build command: CI='' npm run build
+- Publish directory: front-end/build/
+
+Subdir Heroku Buildpack:
+https://github.com/timanovsky/subdir-heroku-buildpack
