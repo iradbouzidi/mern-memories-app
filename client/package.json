@@ -2,9 +2,9 @@
   "name": "mern-memories-app-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://mern-memories-app-backend.vercel.app",
+  "proxy": "https://irad-mern-memories-app-server.vercel.app",
   "dev-proxy": "http://localhost:5000",
-  "vercel-proxy": "https://mern-memories-app-backend.vercel.app",
+  "vercel-proxy": "https://irad-mern-memories-app-server.vercel.app",
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",
