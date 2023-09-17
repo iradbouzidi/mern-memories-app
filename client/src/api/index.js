@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const url = "http://localhost:5000/posts";
+const url = "https://mern-memories-app-backend.vercel.app/posts";
+const dev_url = "http://localhost:5000/posts";
+const vercel_url = "https://mern-memories-app-backend.vercel.app/posts";
 
 export const fetchPosts = () => axios.get(url);
 export const createPost = (newPost) => axios.post(url, newPost);
