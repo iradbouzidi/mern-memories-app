@@ -2,7 +2,7 @@
   "name": "mern-memories-app-client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://irad-mern-memories-app-server.vercel.app",
+  "proxy": "http://localhost:5000",
   "dev-proxy": "http://localhost:5000",
   "vercel-proxy": "https://irad-mern-memories-app-server.vercel.app",
   "dependencies": {
