@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import postRoutes from "./routes/posts.js";
-//import userRouter from "./routes/user.js";
+import userRouter from "./routes/user.js";
 
 const app = express();
 dotenv.config();
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/posts", postRoutes);
-//app.use("/user", userRouter);
+app.use("/user", userRouter);
 
 //const CONNECTION_URL =
 //"mongodb+srv://irad:irad@training-cluster.p1ezege.mongodb.net/mern-memories-app";
