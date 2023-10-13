@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5000";
+const baseURL = "https://irad-mern-memories-app-server.vercel.app";
 // const dev_url = "http://localhost:5000";
 // const vercel_url = "https://irad-mern-memories-app-server.vercel.app";
 
