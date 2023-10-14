@@ -13,7 +13,7 @@ const App = () => {
   const user = JSON.parse(localStorage.getItem("profile"));
 
   return (
-    <GoogleOAuthProvider clientId="508551136587-3jp9dvaof63cjj8jr4k3u1lf3u3lg8ou">
+    <GoogleOAuthProvider clientId="728269899150-hk694oc4orcpirrvpod5ka22shshem1d.apps.googleusercontent.com">
       <BrowserRouter>
         <Container maxWidth="xl">
           <Navbar />
