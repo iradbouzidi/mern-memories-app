@@ -15,7 +15,7 @@ import jwt_decode from "jwt-decode";
 
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
-//import Icon from "./icon";
+import Icon from "./icon";
 import { signin, signup } from "../../actions/auth";
 import { AUTH } from "../../constants/actionTypes";
 import useStyles from "./styles";
@@ -60,7 +60,7 @@ const SignUp = () => {
     const result = jwt_decode(token);
 
     try {
-      dispatch({ type: AUTH, data: { result, token } });
+      dispatch({ type: "AUTH", data: { result, token } });
 
       history.push("/");
     } catch (error) {
@@ -133,7 +133,11 @@ const SignUp = () => {
           >
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
-          <GoogleLogin onSuccess={googleSuccess} onError={googleError} />
+          <GoogleLogin
+            onSuccess={googleSuccess}
+            onError={googleError}
+            cookiePolicy="single_host_origin"
+          />
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Button onClick={switchMode}>
