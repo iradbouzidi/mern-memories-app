@@ -1,13 +1,5 @@
 Back-End:
-https://mern-memories-app-irad.herokuapp.com/
+https://irad-mern-memories-app-server.vercel.app
 
 Front-End:
-https://mern-memories-app-irad.netlify.app/
-
-Nelify Settings:
-- Base directory: front-end
-- Build command: CI='' npm run build
-- Publish directory: front-end/build/
-
-Subdir Heroku Buildpack:
-https://github.com/timanovsky/subdir-heroku-buildpack
+https://irad-mern-memories-app.vercel.app
