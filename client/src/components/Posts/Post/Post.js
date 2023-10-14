@@ -65,7 +65,7 @@ const Post = ({ post, setCurrentId }) => {
     );
   };
 
-  const openPost = () => {
+  const openPost = (e) => {
     // dispatch(getPost(post._id, history));
 
     history.push(`/posts/${post._id}`);
@@ -104,7 +104,7 @@ const Post = ({ post, setCurrentId }) => {
               style={{ color: "white" }}
               size="small"
             >
-              <MoreHorizIcon fontSize="medium" />
+              <MoreHorizIcon fontSize="default" />
             </Button>
           </div>
         )}

@@ -6,12 +6,12 @@ import dotenv from "dotenv";
 import postRoutes from "./routes/posts.js";
 import userRouter from "./routes/user.js";
 
-const app = express();
+var app = express();
 dotenv.config();
 
+app.use(cors());
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome to MERN Memories App Back-End</h1>");

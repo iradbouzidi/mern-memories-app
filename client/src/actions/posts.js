@@ -11,7 +11,6 @@ import {
   COMMENT,
   FETCH_BY_CREATOR,
 } from "../constants/actionTypes";
-
 import * as api from "../api/index.js";
 
 export const getPost = (id) => async (dispatch) => {

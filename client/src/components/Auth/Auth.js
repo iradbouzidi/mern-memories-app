@@ -9,10 +9,15 @@ import {
   Container,
 } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+//import { GoogleLogin } from "react-google-login";
+import { GoogleLogin } from "@react-oauth/google";
+import jwt_decode from "jwt-decode";
 
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 
+//import Icon from "./icon";
 import { signin, signup } from "../../actions/auth";
+import { AUTH } from "../../constants/actionTypes";
 import useStyles from "./styles";
 import Input from "./Input";
 
@@ -24,7 +29,7 @@ const initialState = {
   confirmPassword: "",
 };
 
-const Auth = () => {
+const SignUp = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const dispatch = useDispatch();
@@ -49,6 +54,22 @@ const Auth = () => {
       dispatch(signin(form, history));
     }
   };
+
+  const googleSuccess = async (res) => {
+    const token = res?.credential;
+    const result = jwt_decode(token);
+
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
+
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const googleError = () =>
+    console.log("Google Sign In was unsuccessful. Try again later");
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -112,6 +133,7 @@ const Auth = () => {
           >
             {isSignup ? "Sign Up" : "Sign In"}
           </Button>
+          <GoogleLogin onSuccess={googleSuccess} onError={googleError} />
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Button onClick={switchMode}>
@@ -127,4 +149,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default SignUp;

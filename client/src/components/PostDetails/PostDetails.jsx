@@ -13,7 +13,7 @@ import { getPost, getPostsBySearch } from "../../actions/posts";
 import CommentSection from "./CommentSection";
 import useStyles from "./styles";
 
-const Post = () => {
+const PostDetails = () => {
   const { post, posts, isLoading } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -128,7 +128,7 @@ const Post = () => {
                   <Typography gutterBottom variant="subtitle1">
                     Likes: {likes.length}
                   </Typography>
-                  <img src={selectedFile} alt="" width="200px" />
+                  <img src={selectedFile} width="200px" />
                 </div>
               )
             )}
@@ -139,4 +139,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostDetails;
